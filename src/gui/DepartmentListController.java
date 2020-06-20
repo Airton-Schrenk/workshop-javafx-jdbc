@@ -51,12 +51,13 @@ public class DepartmentListController implements Initializable{
 		createDialogForm(obj, "/gui/DepartmentForm.fxml", parentStage);
 	}
 	
+	
+	
 	public void setDepartmentService(DepartmentService service) {
 		this.service = service;
 	}
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		// TODO Auto-generated method stub
 		initializeNodes();
 	}
 
@@ -84,6 +85,7 @@ public class DepartmentListController implements Initializable{
 			
 			DepartmentFormController controller = loader.getController();
 			controller.setDepartment(obj);
+			controller.setDepartmentService(new DepartmentService());
 			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
